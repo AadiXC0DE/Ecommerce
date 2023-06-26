@@ -11,6 +11,7 @@ import toast from "react-hot-toast";
 
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
+import getStripe from "../lib/getStripe";
 
 const Cart = () => {
   const cartRef = useRef();
@@ -19,7 +20,7 @@ const Cart = () => {
     totalQuantities,
     cartItems,
     setShowCart,
-    toggleCartItemQuantity,
+    toggleCartItemQuanitity,
     onRemove,
   } = useStateContext();
 
@@ -91,7 +92,7 @@ const Cart = () => {
                         <span
                           className="minus"
                           onClick={() =>
-                            toggleCartItemQuantity(item._id, "dec")
+                            toggleCartItemQuanitity(item._id, "dec")
                           }
                         >
                           <AiOutlineMinus />
@@ -102,7 +103,7 @@ const Cart = () => {
                         <span
                           className="plus"
                           onClick={() =>
-                            toggleCartItemQuantity(item._id, "inc")
+                            toggleCartItemQuanitity(item._id, "inc")
                           }
                         >
                           <AiOutlinePlus />
